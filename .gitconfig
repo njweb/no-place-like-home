@@ -1,0 +1,8 @@
+[user]
+	name = nick jenkins
+	email = nickjenkinsweb@gmail.com
+
+[alias]
+    dif = diff --ignore-space-at-eol -b -w --ignore-blank-lines
+    co = checkout
+    br = branch

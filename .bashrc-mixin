@@ -1,0 +1,9 @@
+# setup liquidprompt
+[[ $- = *i* ]] && source ~/Git/liquidprompt/liquidprompt
+
+# configure gruvbox palette colors
+source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+
+alias ll='ls -alF --group-directories-first'
+alias la='ls -A'
+alias l='ls -CF'
