@@ -12,11 +12,16 @@ set number
 set relativenumber
 set cursorline
 
+" adds cursor column highlight when not in insert mode
+set cursorcolumn
+:autocmd InsertEnter,InsertLeave * set cuc!
+
 " show whitespace characters (trailing spaces)
 set list listchars=trail:·
 
-" opening files
-set autochdir " set path to current file dir
+" sets cwd to opened file location (turned off for now. buftype bug was showing up)
+" set autochdir " set path to current file dir
+
 " goto files in a new tab
 nmap gf <c-w>gf
 set suffixesadd+=.js
@@ -35,10 +40,6 @@ endif
 set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
-
-" adds cursor column highlight when not in insert mode
-set cursorcolumn
-:autocmd InsertEnter,InsertLeave * set cuc!
 
 " clear trailing whitespace on file save
 autocmd BufWritePre * :%s/\s\+$//e
