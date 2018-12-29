@@ -4,5 +4,13 @@
 
 [alias]
     dif = diff --ignore-space-at-eol -b -w --ignore-blank-lines
+    diffwords = diff -b -w --word-diff
+    cache = diff --cached
     co = checkout
     br = branch
+    local = log --oneline --no-merges <remote>/<branch>..HEAD
+    upstream = log --oneline --no-merges HEAD..<remote>/<branch>
+    logg = log --graph --all --decorate --stat --date=iso
+    logb = !git log --graph --all --decorate --stat --date=iso $(git branch | grep \\* | cut -d ' ' -f2)
+[core]
+	editor = vim
