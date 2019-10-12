@@ -79,6 +79,8 @@ colorscheme gruvbox
 set cursorcolumn
 :autocmd InsertEnter,InsertLeave * set cuc!
 
+nmap <leader>t :r<space>~/.vim/templates/
+
 " clear trailing whitespace on file save
 autocmd BufWritePre * :%s/\s\+$//e
 
