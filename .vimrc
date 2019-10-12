@@ -46,6 +46,10 @@ set suffixesadd+=.jsx
 "enable "stamp"ing yanked text with S key
 nmap S "_diwP
 
+" paste from yank buffer
+nnoremap <leader>p "0p<CR>
+nnoremap <leader>P "0P<CR>
+
 " configure netrw without banner and tree view liststyle by default
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
