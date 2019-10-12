@@ -94,6 +94,14 @@ let g:lightline = { 'colorscheme': 'wombat' }
 " don't open folds during text searches
 set foldopen-=search
 
+" create folds across matching brackets
+nmap z{ [{v%zf
+nmap z} [{v%zf
+nmap z[ [[v%zf
+nmap z] [[v%zf
+nmap z( [(v%zf
+nmap z) [(v%zf
+
 " configure using ag instead of ack
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
