@@ -15,13 +15,35 @@ set number
 set relativenumber
 set cursorline
 
+" adds cursor column highlight when not in insert mode
+set cursorcolumn
+:autocmd InsertEnter,InsertLeave * set cuc!
+
 " setup wildmode
 set wildmode=longest,list,full
 set wildmenu
 
+" lightline config
+set noshowmode " disables vim's default way of showing insert status
+let g:lightline = { 'colorscheme': 'wombat' }
+
+" show whitespace characters (trailing spaces)
+set list listchars=trail:·
+
+" clear trailing whitespace on file save
+autocmd BufWritePre * :%s/\s\+$//e
+
 " set splits to open to the right/below
 set splitright
 set splitbelow
+
+" goto files in a new tab
+nmap gf <c-w>gf
+set suffixesadd+=.js
+set suffixesadd+=.jsx
+
+" add some scroll offset
+set so=8
 
 " allow split navgation using ctrl+h/j/k/l
 nnoremap <C-H> <C-W><C-H>
@@ -29,22 +51,39 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
+" allow setting cwd to current file path with :Cd
+command Cd cd %:p:h
+
+" opening files (turned off for now. buftype bug was showing up)
+" set autochdir " set path to current file dir
+"
 "set leader to ,
 let mapleader=","
 
-" show whitespace characters (trailing spaces)
-set list listchars=trail:·
+" allow quick resize of veritcal splits
+nnoremap <leader>vr :vertical resize<space>
 
-" opening files (turned off for now. buftype bug was showing up_
-" set autochdir " set path to current file dir
-"
-" goto files in a new tab
-nmap gf <c-w>gf
-set suffixesadd+=.js
-set suffixesadd+=.jsx
+" jump to tab by number
+nmap <leader>1 1gt
+nmap <leader>2 2gt
+nmap <leader>3 3gt
+nmap <leader>4 4gt
+nmap <leader>5 5gt
 
-"enable "stamp"ing yanked text with S key
+" open file explorer quickly
+nnoremap - :Ex<CR>
+
+" open file explorer in a new tab
+nmap <leader>f :Tex<CR>
+
+" open a vertical split
+nmap <leader>s :vsp<CR>
+
+" enable "stamp"ing yanked text with S key
 nmap S "_diwP
+
+" rerun last macro with Q key
+nmap Q @@
 
 " paste from yank buffer
 nnoremap <leader>p "0p<CR>
@@ -54,12 +93,10 @@ nnoremap <leader>P "0P<CR>
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 
-" allow setting cwd to current file path with :Cd
-command Cd cd %:p:h
-
 " add js comment to the beginning of all selected lines
+" vmap <leader>c :s/^/\/\//<CR>
 vmap <leader>c :s/^/\/\//<CR>
-vmap <leader>u :s/^\/\///<CR>
+vmap <leader>u :s/\/\///<CR>
 
 " allows cursor change in tmux mode
 if exists('$TMUX')
@@ -75,18 +112,11 @@ set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
-" adds cursor column highlight when not in insert mode
-set cursorcolumn
-:autocmd InsertEnter,InsertLeave * set cuc!
-
+" prepare to insert template
 nmap <leader>t :r<space>~/.vim/templates/
 
-" clear trailing whitespace on file save
-autocmd BufWritePre * :%s/\s\+$//e
-
-" lightline config
-set noshowmode " disables vim's default way of showing insert status
-let g:lightline = { 'colorscheme': 'wombat' }
+" yank whole line without newline
+nmap <leader>y ^v$hy
 
 " (disabled for now)configure folding by indent
 " set foldmethod=indent
