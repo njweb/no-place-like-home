@@ -6,6 +6,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType pug setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType stylus setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -85,18 +86,21 @@ nmap S "_diwP
 " rerun last macro with Q key
 nmap Q @@
 
+" clear search hightlight by hitting Esc twice
+nnoremap <silent> <Esc><Esc> :noh<CR>
+
 " paste from yank buffer
 nnoremap <leader>p "0p<CR>
 nnoremap <leader>P "0P<CR>
 
+" copy current seletion to the clipboard
+if executable('xsel')
+    vmap <leader>c :!xsel --clipboard --input<CR>u
+endif
+
 " configure netrw without banner and tree view liststyle by default
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
-
-" add js comment to the beginning of all selected lines
-" vmap <leader>c :s/^/\/\//<CR>
-vmap <leader>c :s/^/\/\//<CR>
-vmap <leader>u :s/\/\///<CR>
 
 " allows cursor change in tmux mode
 if exists('$TMUX')
