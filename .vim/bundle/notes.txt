@@ -1,0 +1,3 @@
+IN `vim-jsx-pretty/after/syntax/jsx_pretty.vim` >
+  CHANGE `highlight def link jsxComponentName Function`
+  TO `highlight def link jsxComponentName Identifier`
