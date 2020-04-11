@@ -9,3 +9,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias pm=podman
+
+# needs xsel installed
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
