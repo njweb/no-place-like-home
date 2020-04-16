@@ -96,7 +96,7 @@ nnoremap <leader>P "0P<CR>
 
 " copy current seletion to the clipboard
 if executable('xsel')
-    vmap <leader>c :!xsel --clipboard --input<CR>u
+    vmap <leader>c y:call system("xsel --clipboard --input", @")<CR>
 endif
 
 " setup fzf
