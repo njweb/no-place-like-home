@@ -99,6 +99,12 @@ if executable('xsel')
     vmap <leader>c :!xsel --clipboard --input<CR>u
 endif
 
+" setup fzf
+if executable('fzf')
+    set rtp+=~/.fzf
+    nmap <leader>z :FZF<CR>
+endif
+
 " configure netrw without banner and tree view liststyle by default
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
