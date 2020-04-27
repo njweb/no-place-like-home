@@ -76,10 +76,13 @@ nmap <leader>5 5gt
 nnoremap - :Ex<CR>
 
 " open file explorer in a new tab
-nmap <leader>f :Tex<CR>
+nmap <leader>t :Tex<CR>
 
 " open a vertical split
 nmap <leader>s :vsp<CR>
+
+" prepare to insert template
+nmap <leader>m :r<space>~/.vim/templates/
 
 " enable "stamp"ing yanked text with S key
 nmap S "_diwP
@@ -99,10 +102,10 @@ if executable('xsel')
     vmap <leader>c y:call system("xsel --clipboard --input", @")<CR>
 endif
 
-" setup fzf
+" enable fzf
 if executable('fzf')
     set rtp+=~/.fzf
-    nmap <leader>z :FZF<CR>
+    nmap <leader>f :FZF<CR>
 endif
 
 " configure netrw without banner and tree view liststyle by default
@@ -122,9 +125,6 @@ endif
 set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
-
-" prepare to insert template
-nmap <leader>t :r<space>~/.vim/templates/
 
 " yank whole line without newline
 nmap <leader>y ^v$hy
