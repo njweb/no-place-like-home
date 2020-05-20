@@ -3,6 +3,7 @@
 	email = nickjenkinsweb@gmail.com
 
 [alias]
+    s = status
     dif = diff --ignore-space-at-eol -b -w --ignore-blank-lines
     diffwords = diff -b -w --word-diff
     cache = diff --cached
@@ -14,3 +15,4 @@
     logb = !git log --graph --all --decorate --stat --date=iso $(git branch | grep \\* | cut -d ' ' -f2)
 [core]
 	editor = vim
+
