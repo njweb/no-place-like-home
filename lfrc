@@ -1,0 +1,10 @@
+" During setup, store this file at ~/.config/lf/
+
+cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
+map r push :rename<space>
+
+cmd mkdir %mkdir -p "$@"
+map a push :mkdir<space>
+
+cmd touch %touch "$@"
+map t push :touch<space>
