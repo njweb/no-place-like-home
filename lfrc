@@ -1,4 +1,4 @@
-" During setup, store this file at ~/.config/lf/
+# During setup, store this file at ~/.config/lf/
 
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 map r push :rename<space>
