@@ -110,6 +110,11 @@ if executable('fzf')
     nmap <leader>f :FZF<CR>
 endif
 
+" configure ALE linting
+let b:ale_linters = ['eslint']
+let g:ale_fixers = { 'javascript': ['eslint'] }
+let g:ale_fix_on_save = 1
+
 " configure netrw without banner and tree view liststyle by default
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
