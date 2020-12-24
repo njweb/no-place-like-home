@@ -2,7 +2,7 @@
 [[ $- = *i* ]] && source ~/.config/liquidprompt/liquidprompt
 
 # setup colors that will be imported by lf
-LS_COLORS='di=01;34:ln=01;36:pi=33:so=01;35:do=01;35:bd=33;01:cd=33;01:or=31;01:su=01;32:sg=01;32:tw=01;34:ow=01;34:st=01;34:ex=01;32'
+LS_COLORS='di=01;36:ln=01;36:pi=33:so=01;35:do=01;35:bd=33;01:cd=33;01:or=31;01:su=01;32:sg=01;32:tw=01;34:ow=01;34:st=01;34:ex=01;32'
 
 # configure gruvbox palette colors
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
