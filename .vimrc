@@ -15,7 +15,7 @@ autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " setup linenumbers
 set number
-set relativenumber
+" set relativenumber
 set cursorline
 
 " adds cursor column highlight when not in insert mode
