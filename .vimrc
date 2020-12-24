@@ -97,6 +97,7 @@ nnoremap <silent> <Esc><Esc> :noh<CR>
 " paste from yank buffer
 nnoremap <leader>p "0p<CR>
 nnoremap <leader>P "0P<CR>
+vmap <leader>p d"0P<CR>
 
 " copy current seletion to the clipboard
 if executable('xsel')
